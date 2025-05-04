@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+.modo-escuro {
+  background-color: #121212;
+  color: white;
+}
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+button {
+  padding: 5px 10px;
+}
+.preview-img {
+  max-width: 200px;
+  margin-top: 10px;
+}
+.erro {
+  color: red;
+}

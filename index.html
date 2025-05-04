@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rodada da Sorte</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <button class="modo-toggle" onclick="alternarModo()">Alternar Modo</button>
+
+  <header>
+    <img src="imagens/logo.png" alt="Logo da Rifa" id="logoPrincipal" />
+    <nav>
+      <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#campanhas-criadas">Campanhas</a></li>
+        <li><a href="#criar-campanha">Nova Campanha</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#" onclick="mostrarLogin()">Área Admin</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id="login-form">
+    <h2>Login de Admin</h2>
+    <input type="text" id="username" placeholder="Usuário" required />
+    <input type="password" id="password" placeholder="Senha" required />
+    <button onclick="login()">Entrar</button>
+    <div id="erro-login" class="erro"></div>
+  </div>
+
+  <div class="admin-area">
+    <h2>Área Administrativa</h2>
+  </div>
+
+  <section id="banner">
+    <h1>Bem-vindo ao Rodada da Sorte</h1>
+    <img src="imagens/banner.jpg" alt="Banner da campanha" id="bannerPrincipal" class="preview-img" />
+  </section>
+
+  <section id="campanhas-criadas">
+    <h2>Campanhas Criadas</h2>
+    <ul id="listaCampanhas"></ul>
+  </section>
+
+  <section id="criar-campanha">
+    <h2>Criar Nova Campanha</h2>
+    <form id="formNovaCampanha" onsubmit="criarCampanha(event)">
+      <label>Nome da Campanha: <input type="text" name="nome" required /></label>
+      <label>Descrição: <textarea name="descricao" required></textarea></label>
+      <label>Valor por Número (R$): <input type="number" name="valor" step="0.01" required /></label>
+      <label>Link Mercado Pago: <input type="url" name="link_pagamento" required /></label>
+      <label>Link Pix: <input type="text" name="link_pix" placeholder="Exemplo: 1234-5678-9012-3456" required /></label>
+      <label>Quantidade de Números: <input type="number" name="quantidade_numeros" min="1" required /></label>
+      <label>Banner da Campanha: <input type="file" id="bannerUpload" accept="image/*" /></label>
+      <img id="previewBanner" class="preview-img" style="display:none;" />
+      <label>Logo da Campanha: <input type="file" id="logoUpload" accept="image/*" /></label>
+      <img id="previewLogo" class="preview-img" style="display:none;" />
+      <div id="mensagemErro" class="erro"></div>
+      <button type="submit">Criar</button>
+    </form>
+  </section>
+
+  <section id="criar-numeros">
+    <h2>Gerar Números</h2>
+    <label for="quantidade">Quantidade de números:</label>
+    <input type="number" id="quantidade" min="1" value="100" />
+    <button onclick="gerarNumeros()">Gerar</button>
+    <div id="numeros"></div>
+  </section>
+
+  <footer>
+    <p>Todos os direitos reservados &copy; 2025</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
